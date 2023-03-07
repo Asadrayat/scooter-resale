@@ -1,0 +1,39 @@
+[
+    {
+        "_id": 1,
+        "original_price": "$1,717.89",
+        "resale_price": "$1,236.43",
+        "picture": "https://i.ibb.co/4s9MWWj/almira.jpg",
+        "catagory": "Low Budget",
+        "title": "Honda Activa",
+        "seller": "Bishop Huber",
+        "location": "743 Ruby Street, Austinburg, Oklahoma, 1515",
+        "about": "The Honda Activa is a popular scooter model in India known for its reliability and fuel efficiency.\n Second-hand Honda Activa scooters can be a cost-effective option for those looking for a dependable mode of transportation",
+        "used": "2years"
+    },
+    {
+        "_id": 2,
+        "original_price": "$1,517.89",
+        "resale_price": "$1000",
+        "picture": "https://i.ibb.co/4s9MWWj/almira.jpg",
+        "catagory": "Low Budget",
+        "title": "Suzuki access",
+        "seller": "Bin disel",
+        "location": "743 Gazi house, Turki, India",
+        "about": "The Suzuki Access is a well-known scooter model in India, appreciated for its smooth ride and spacious storage.\n Buying a second-hand Suzuki Access scooter can be a smart choice for those seeking a reliable and comfortable ride at a lower cost.",
+        "used": "1.5years"
+    },
+    {
+        "_id": 3,
+        "original_price": "$1,900",
+        "resale_price": "$1500",
+        "picture": "https://i.ibb.co/4s9MWWj/almira.jpg",
+        "catagory": "Low Budget",
+        "title": "TVS Wego",
+        "seller": "dewayne Johnson",
+        "location": "983 Mark Street, Bankok, Thailand",
+        "about": "The TVS Wego is a popular scooter model in India known for its sturdy build and comfortable ride.\n Purchasing a second-hand TVS Wego scooter can be a budget-friendly option for those looking for a reliable and efficient mode of transportation.",
+        "used": "5 months"
+    }
+  
+]

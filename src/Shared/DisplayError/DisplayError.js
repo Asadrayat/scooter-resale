@@ -1,35 +1,30 @@
-import { useContext } from "react";
-import { useNavigate, useRouteError, } from "react-router-dom";
-import { AuthContext } from "../../Context/Authprovider/Authprovider";
+import { HandThumbDownIcon } from '@heroicons/react/24/solid'
+import React from 'react'
+import { Link } from 'react-router-dom'
 const DisplayError = () => {
-    const { logOut } = useContext(AuthContext);
-    const error = useRouteError();
-    const navigate = useNavigate();
-
-    const handleLogOut = () => {
-        logOut()
-            .then(() => {
-                navigate('/login');
-            })
-            .catch(err => console.log(err));
-    }
-
     return (
-        <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src='https://i.ibb.co/fHjjdBH/error.webp' className="max-w-sm rounded-lg shadow-2xl" />
-                    <div>
-                        <p className='text-red-500'>Something went wrong!!!</p>
-                        <p className='text-red-400'>{error.statusText || error.message}</p>
-                        <h4 className="text-3xl"> Please <button className="btn btn-error" onClick={handleLogOut}>Sign out</button> and log back in</h4>
-                    </div>
+        <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
+            <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
+                <HandThumbDownIcon className='w-40 h-40 text-blue-400' />
+                <div className='max-w-md text-center'>
+                    <h2 className='mb-8 font-extrabold text-9xl text-gray-500'>
+                        <span className='sr-only'>Error</span>
+                        <div className='flex justify-center items-center h-full'>
+                            4
+                            <div className='w-24 h-24 border-8 border-dashed rounded-full animate-spin mt-3 border-blue-400'></div>
+                            4
+                        </div>
+                    </h2>
+                    <p className='text-2xl font-semibold md:text-3xl mb-8'>
+                        Sorry, we couldn't find this page.
+                    </p>
+                    <Link to='/'>
+                        <button className='btn bg-gradient-to-r from-cyan-500 to-blue-900'>Back to Home Page</button>
+                    </Link>
                 </div>
             </div>
+        </section>
+    )
+}
 
-
-        </div>
-    );
-};
-
-export default DisplayError;
+export default DisplayError

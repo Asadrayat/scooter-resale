@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCAAdlTD1RST7zBwAH3-GiItlXDVUDA-1k",
-  authDomain: "recycle-bin-8bc7a.firebaseapp.com",
-  projectId: "recycle-bin-8bc7a",
-  storageBucket: "recycle-bin-8bc7a.appspot.com",
-  messagingSenderId: "105026501187",
-  appId: "1:105026501187:web:4aff81e47003c0c78a32f6"
+  apiKey: "AIzaSyAcePdwajQ9XJHX-IYmVdmrSZhE0kUSQ80",
+  authDomain: "scooter-resale.firebaseapp.com",
+  projectId: "scooter-resale",
+  storageBucket: "scooter-resale.appspot.com",
+  messagingSenderId: "21642311060",
+  appId: "1:21642311060:web:b9b2cd6d05ae845c8c4b81"
 };
 
 // Initialize Firebase

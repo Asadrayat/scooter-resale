@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-scroll';
-import { AuthContext } from '../../Context/Authprovider/Authprovider';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/Authprovider/Authprovider";
+
 
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -15,6 +16,7 @@ const Nav = () => {
         <li><Link to="/">Home</Link></li>
         {/* <li><Link to="/appointment">Appointment</Link></li> */}
         <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/contact">Contact Us</Link></li>
         <li><Link activeClass="active" to="/why" spy={true} smooth={true} offset={50} duration={500} >Why</Link></li>
         {user?.uid ?
             <>
@@ -25,7 +27,7 @@ const Nav = () => {
     </React.Fragment>
 
     return (
-        <div className="navbar bg-base-100 flex justify-between">
+        <div className="navbar bg-base-100 flex justify-between max-w-[1440px] mx-auto my-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn bg-gradient-to-r from-red-500 to-red-900 lg:hidden">

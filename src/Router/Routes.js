@@ -12,14 +12,11 @@ import AddProducts from "../Pages/Home/Dashboard/AddProducts/AddProducts";
 import MyProduct from "../Pages/Home/Dashboard/MyProduct/MyProduct";
 import SellerRoute from "./SellerRout";
 import AllBuyers from "../Pages/Home/Dashboard/AllBuyers/AllBuyers";
-
-
-
-const { createBrowserRouter } = require("react-router-dom");
-const { default: Main } = require("../Layout/Main");
-const { default: Home } = require("../Pages/Home/Home/Home");
-const { default: Signup } = require("../Pages/Signup/SignUp");
-
+import Contact from "../Pages/Home/Contact/Contact";
+import { createBrowserRouter } from "react-router-dom";
+import Main from "../Layout/Main";
+import Home from "../Pages/Home/Home/Home";
+import SignUp from "../Pages/Signup/SignUp";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -36,16 +33,20 @@ const router = createBrowserRouter([
             },
             {
                 path: '/signup',
-                element: <Signup></Signup>
+                element: <SignUp></SignUp>
             },
             {
                 path: '/blog',
                 element: <Blog></Blog>
             },
             {
+                path: '/contact',
+                element: <Contact></Contact>
+            },
+            {
                 path: '/catagoryOptions/:id',
-                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://recycle-bin-server-rose.vercel.app/catagoryOptions/${params.id}`)
+                element: <CheckOut></CheckOut>,
+                loader: ({ params }) => fetch(`catagory.json/catagoryOptions/${params._id}`)
             },
             {
                 path: '/why',

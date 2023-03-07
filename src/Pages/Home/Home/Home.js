@@ -10,11 +10,13 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <ProductCatagories></ProductCatagories>
-            <AdvertisedItem></AdvertisedItem>
-            <Why></Why>
-            <Testimonial></Testimonial>
-            <Contact></Contact>
+            <div className='max-w-[1440px] mx-auto'>
+                <ProductCatagories></ProductCatagories>
+                <AdvertisedItem></AdvertisedItem>
+                <Why></Why>
+                <Testimonial></Testimonial>
+                <Contact></Contact>
+            </div>
         </div>
     );
 };

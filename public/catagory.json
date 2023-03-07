@@ -2,18 +2,21 @@
     {
         "_id": 1,
         "name": "Low Budget",
+        "catagory": "lowBudget",
         "icon": "https://i.ibb.co/pLSc2F6/low.webp",
         "bgClass": "bg-gradient-to-r from-cyan-500 to-blue-500"
     },
     {
         "_id": 2,
         "name": "Mid Range",
+        "catagory": "midBudget",
         "icon": "https://i.ibb.co/rvvKSgS/mid.webp",
         "bgClass": "bg-gradient-to-r from-cyan-500 to-blue-500"
     },
     {
         "_id": 3,
         "name": "Flagship Range",
+        "catagory": "highBudget",
         "icon": "https://i.ibb.co/7SD0TwB/flagship.webp",
         "bgClass": "bg-gradient-to-r from-cyan-500 to-blue-500"
     }
