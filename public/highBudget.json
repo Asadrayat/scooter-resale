@@ -1,0 +1,39 @@
+[
+    {
+        "_id": 1,
+        "original_price": "$2517.89",
+        "resale_price": "$1,836.43",
+        "picture": "https://i.ibb.co/VDWWKWT/vista-removebg-preview.png",
+        "catagory": "High Budget",
+        "title": "Znen Vista",
+        "seller": "Ian Bishop",
+        "location": "Strandgade, Denmark 1515",
+        "about": "The Znen Vista is a popular scooter model in India known for its reliability and fuel efficiency.\n Second-hand Honda Dio scooters can be a cost-effective option for those looking for a dependable mode of transportation",
+        "used": "2years"
+    },
+    {
+        "_id": 2,
+        "original_price": "$2900",
+        "resale_price": "$2000",
+        "picture": "https://i.ibb.co/VDkKD1N/ADV.png",
+        "catagory": "High Budget",
+        "title": "Honda ADV",
+        "seller": "Danny Morrison",
+        "location": "Rue de la Paix, France",
+        "about": "The Honda ADV is a well-known scooter model in India, appreciated for its smooth ride and spacious storage.\n Buying a second-hand Honda ADV scooter can be a smart choice for those seeking a reliable and comfortable ride at a lower cost.",
+        "used": "1.5years"
+    },
+    {
+        "_id": 3,
+        "original_price": "$3000",
+        "resale_price": "$2200",
+        "picture": "https://i.ibb.co/D1MbYRz/NMAX.jpg",
+        "catagory": "High Budget",
+        "title": "Yamaha NMAX",
+        "seller": "Russel Arnold",
+        "location": "Passeig de Gracia, Spain",
+        "about": "The Yamaha NMAX is a popular scooter model in India known for its sturdy build and comfortable ride.\n Purchasing a second-hand Yamaha NMAX scooter can be a budget-friendly option for those looking for a reliable and efficient mode of transportation.",
+        "used": "5 months"
+    }
+  
+]
