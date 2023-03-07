@@ -1,39 +1,42 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import BookingModal from './BookingModal/BookingModal';
-import Furniture from './Furniture/Furniture';
+import Scooter from './Scooter/Scooters';
 
 const CheckOut = () => {
-    const { name } = useLoaderData();
-    const [furnitureOption, setFurnitureOption] = useState([]);
-    const { data: furnitures = [], refetch } = useQuery({
-        queryKey: ['furnitures'],
+    const { catagory, name } = useLoaderData();
+    console.log(catagory);
+    const [scootereOption, setScootereOption] = useState([]);
+    const { data: scooters = [], refetch } = useQuery({
+        queryKey: ['scooters'],
         queryFn: async () => {
-            const res = await fetch(`https://recycle-bin-server-rose.vercel.app/${name}`);
+            const res = await fetch(`http://localhost:5000/${catagory}`);
             const data = await res.json();
             return data
         }
     })
     return (
-        <section>
-            <div className='grid lg:grid-cols-2 my-12  grid-cols-1 align-middle'>
-                {
-                    furnitures.map(furniture => <Furniture
-                        key={furniture._id}
-                        furniture={furniture}
-                        setFurnitureOption={setFurnitureOption}
-                    ></Furniture>)
-                }
+        <section className='max-w-[1440px] mx-auto'>
+            <div>
+                <p className='my-10 text-5xl text-blue-900 font-bold text-center'>{name} PreOwned Scooters</p>
+                <div className='grid lg:grid-cols-3 my-12  grid-cols-1 align-middle'>
+                    {
+                        scooters.map(scooter => <Scooter
+                            key={scooter._id}
+                            scooter={scooter}
+                            setscooterOption={setScootereOption}
+                        ></Scooter>)
+                    }
+                </div>
             </div>
             {
-                furnitureOption &&
-                <BookingModal
-                    refetch={refetch}
-                    key={furnitures._id}
-                    furnitureOption={furnitureOption}
-                    setFurnitureOption={setFurnitureOption}
-                ></BookingModal>
+                // scooterOption &&
+                // <BookingModal
+                //     refetch={refetch}
+                //     key={scooters._id}
+                //     scooterOption={scooterOption}
+                //     setscooterOption={setscooterOption}
+                // ></BookingModal>
             }
         </section>
 

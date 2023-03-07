@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "original_price": "$1,717.89",
         "resale_price": "$1,236.43",
         "picture": "https://i.ibb.co/1mW7xN1/activa.png",
@@ -12,7 +11,6 @@
         "used": "2years"
     },
     {
-        "_id": 2,
         "original_price": "$1,517.89",
         "resale_price": "$1000",
         "picture": "https://i.ibb.co/dprHrSB/suzuki-access.png",
@@ -24,7 +22,6 @@
         "used": "1.5years"
     },
     {
-        "_id": 3,
         "original_price": "$1,900",
         "resale_price": "$1500",
         "picture": "https://i.ibb.co/Hd86v4H/tvsWego.png",

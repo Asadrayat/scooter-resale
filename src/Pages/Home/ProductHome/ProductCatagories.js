@@ -5,7 +5,7 @@ const ProductCatagories = () => {
     const { data: catagories = [] } = useQuery({
         queryKey: ['catagoryOptions'],
         queryFn: async () => {
-            const res = await fetch('catagory.json');
+            const res = await fetch('http://localhost:5000/catagoryOptions');
             const data = await res.json();
             return data
         }
