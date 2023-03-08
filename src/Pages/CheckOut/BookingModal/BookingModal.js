@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/Authprovider/Authprovider';
 
-const BookingModal = ({ furnitureOption, setFurnitureOption, refetch }) => {
-    const { catagory, location, picture, used, _id, title, seller, resale_price, posted, original_price, about } = furnitureOption;
+const BookingModal = ({ scooterOption, setScooterOption, refetch }) => {
+    const { catagory, location, picture, used, _id, title, seller, resale_price, posted, original_price, about } = scooterOption;
     const { user } = useContext(AuthContext);
     const handleBooking = event => {
         event.preventDefault();
@@ -19,7 +19,7 @@ const BookingModal = ({ furnitureOption, setFurnitureOption, refetch }) => {
 
         const booking = {
             title,
-            seller: displayName,
+            name: displayName,
             resale_price,
             phone,
             pickup,
@@ -27,7 +27,7 @@ const BookingModal = ({ furnitureOption, setFurnitureOption, refetch }) => {
             picture
 
         }
-        fetch('https://recycle-bin-server-rose.vercel.app/bookings', {
+        fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,8 +38,8 @@ const BookingModal = ({ furnitureOption, setFurnitureOption, refetch }) => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    setFurnitureOption(null);
-                    toast.success('Booking confirm')
+                    setScooterOption(null);
+                    toast.success('Booking Successful')
                     refetch();
                 }
                 else {
@@ -55,7 +55,7 @@ const BookingModal = ({ furnitureOption, setFurnitureOption, refetch }) => {
                 <div className="modal">
                     <div className="modal-box relative">
                         <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                        <h3 className="text-lg font-bold">Furniture</h3>
+                        <h3 className="text-3xl text-center font-bold text-blue-900">Scooter</h3>
                         <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'>
                             <input name="title" type="text" defaultValue={title} disabled className="input w-full input-bordered" />
                             <input name="picturer" type="text" defaultValue={picture} disabled className="input w-full input-bordered" />
@@ -67,7 +67,7 @@ const BookingModal = ({ furnitureOption, setFurnitureOption, refetch }) => {
                             <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                             <input name="pickup" type="text" placeholder="Enter Pickup Point" className="input w-full input-bordered" />
                             <br />
-                            <input className='btn btn-warning w-full' type="submit" value="Submit" />
+                            <input className='btn bg-gradient-to-r from-red-500 to-red-900' type="submit" value="Submit" />
                         </form>
                     </div>
                 </div>

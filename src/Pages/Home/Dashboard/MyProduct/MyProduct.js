@@ -14,7 +14,7 @@ const MyProduct = () => {
     const { data: Products = [],isLoading,refetch } = useQuery({
         queryKey: ['products', user?.email],
         queryFn: async () => {
-            const res = await fetch(`https://recycle-bin-server-rose.vercel.app/products?email=${user?.email}`, {
+            const res = await fetch(`http://localhost:5000/products?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -29,7 +29,7 @@ const MyProduct = () => {
         queryKey: ['product'],
         queryFn: async () => {
             try {
-                const res = await fetch(`https://recycle-bin-server-rose.vercel.app/products?email=${user?.email}`, {
+                const res = await fetch(`http://localhost:5000/products?email=${user?.email}`, {
                     headers: {
                         authorization: `beare ${localStorage.getItem('accessToken')}`
                     }
@@ -43,7 +43,7 @@ const MyProduct = () => {
         }
     }); */
     const handleDeleteProduct = product => {
-        fetch(`https://recycle-bin-server-rose.vercel.app/products/${product._id}`, {
+        fetch(`http://localhost:5000/products/${product._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -62,11 +62,11 @@ const MyProduct = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className="mx-20">
             <h2 className="text-3xl text-center mb-4">Manage Product: {Products?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
-                    <thead>
+                    <thead >
                         <tr>
                             <th></th>
                             <th>Avatar</th>

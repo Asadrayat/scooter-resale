@@ -1,4 +1,7 @@
 import React from 'react';
+import Achieve from '../../Achieve/Achieve';
+import Dealin from '../../Dealin/Dealin';
+import Sellyour from '../../Sellyour/Sellyour';
 import AdvertisedItem from '../AdvertisedItem/AdvertisedItem';
 import Banner from '../Banner/Banner';
 import Contact from '../Contact/Contact';
@@ -10,10 +13,17 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <Dealin></Dealin>
             <div className='max-w-[1440px] mx-auto'>
                 <ProductCatagories></ProductCatagories>
                 <AdvertisedItem></AdvertisedItem>
+                <Sellyour></Sellyour>
                 <Why></Why>
+            </div>
+            <div>
+                <Achieve></Achieve>
+            </div>
+            <div className='max-w-[1440px] mx-auto'>
                 <Testimonial></Testimonial>
                 <Contact></Contact>
             </div>

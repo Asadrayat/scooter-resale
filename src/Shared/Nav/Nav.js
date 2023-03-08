@@ -13,17 +13,17 @@ const Nav = () => {
             .catch(err => console.log(err));
     }
     const menuItems = <React.Fragment>
-        <li><Link to="/">Home</Link></li>
-        {/* <li><Link to="/appointment">Appointment</Link></li> */}
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/contact">Contact Us</Link></li>
-        <li><Link activeClass="active" to="/why" spy={true} smooth={true} offset={50} duration={500} >Why</Link></li>
+        <li className="text-xl font-bold "><Link to="/">Home</Link></li>
+        {/* <li className="text-xl font-bold "><Link to="/appointment">Appointment</Link></li> */}
+        <li className="text-xl font-bold "><Link to="/blog">Blog</Link></li>
+        <li className="text-xl font-bold "><Link to="/contact">Contact Us</Link></li>
+        <li className="text-xl font-bold "><Link activeClass="active" to="/why" spy={true} smooth={true} offset={50} duration={500} >Why</Link></li>
         {user?.uid ?
             <>
-                <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><button onClick={handleLogOut}>Sign out</button></li>
+                <li className="text-xl font-bold "><Link to="/dashboard">Dashboard</Link></li>
+                <li className="text-xl font-bold "><button onClick={handleLogOut}>Sign out</button></li>
             </>
-            : <li><Link to="/login">Login</Link></li>}
+            : <li className="text-xl font-bold "><Link to="/login">Login</Link></li>}
     </React.Fragment>
 
     return (
@@ -37,7 +37,7 @@ const Nav = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to="/" className="btn bg-gradient-to-r from-red-500 to-red-900 normal-case text-xl">Scooter Reslae</Link>
+                <Link to="/" className="btn  btn-outline  text-xl">Scooter Reslae</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

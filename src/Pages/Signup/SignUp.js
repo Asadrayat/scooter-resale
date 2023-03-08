@@ -2,7 +2,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/Authprovider/Authprovider";
 import useToken from "../../Hooks/UseToken/UseToken";
 
@@ -15,23 +15,34 @@ const SignUp = () => {
     const [createdUserEmail, setCreatedUserEmail] = useState('');
     const [token] = useToken(createdUserEmail);
     if (token) {
-        navigate('/') 
-        
+        navigate('/')
+
     }
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                toast('User Created Successfully.')
+                navigate('/')
+                const userInfo = {
+                    displayName: user.displayName,
+                    email: user.email,
+                    role: 'user'
+                }
+                updateUser(userInfo)
+                    .then(() => { })
+                saveUser(user.displayName, user.email, user.role)
+                    .catch(err => console.log(err));
+
             })
             .catch(error => {
                 console.error(error)
+
             });
-            saveUser()
     }
     const handleSignUp = (data) => {
-        console.log(data.role);
+        // console.log(data.role);
         setSignUPError('');
         createUser(data.email, data.password, data.displayName, data.role)
             .then(result => {
@@ -49,14 +60,14 @@ const SignUp = () => {
                     .catch(err => console.log(err));
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
                 setSignUPError(error.message)
             });
 
     }
     const saveUser = (name, email, role) => {
         const user = { name, email, role };
-        fetch('https://recycle-bin-server-rose.vercel.app/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -68,7 +79,7 @@ const SignUp = () => {
                 setCreatedUserEmail(email)
             })
     }
-   
+
 
     return (
         <div className='h-[800px] flex justify-center items-center'>

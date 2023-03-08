@@ -4,6 +4,7 @@ import { AuthContext } from "../../Context/Authprovider/Authprovider";
 import UseAdmin from "../../Hooks/UseAdmin/UseAdmin";
 import UseSeller from "../../Hooks/UseSeller/UseSeller";
 import UseUser from "../../Hooks/UseUser/UseUser";
+import Footer from "../Footer/Footer";
 import Nav from "../Nav/Nav";
 
 
@@ -14,7 +15,7 @@ const DashboardLayout = () => {
     const [isUser] = UseUser(user?.email);
     // const [isAdmin] = useAdmin(user?.email);
     return (
-        <div>
+        <div className="max-w-[1440px] mx-auto">
             <Nav></Nav>,
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -23,9 +24,8 @@ const DashboardLayout = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-yellow-50 text-base-content">
+                    <ul className="menu p-4 w-80 bg-cyan-600 text-white text-center text-xl font-bold">
 
-                        <li><Link to='/dashboard/dashboard'>My Bookings</Link></li>
 
                         {
                             isAdmin &&
@@ -43,11 +43,18 @@ const DashboardLayout = () => {
                                 <li><Link to='/dashboard/addproduct'>Add Product</Link></li>
                             </>
                         }
+                        {
+                            isUser &&
+                            <>
+                                <li><Link to='/dashboard/dashboard'>My Bookings</Link></li>
+                            </>
+                        }
 
                     </ul>
 
                 </div>
             </div>
+            <Footer></Footer>
         </div>
 
     );

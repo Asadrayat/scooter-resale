@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/Authprovider/Authprovider";
 
 const MyAppointment = () => {
     const { user } = useContext(AuthContext);
-    const url = `https://recycle-bin-server-rose.vercel.app/bookings?email=${user?.email}`;
+    const url = `http://localhost:5000/bookings?email=${user?.email}`;
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
@@ -20,7 +20,7 @@ const MyAppointment = () => {
     })
     console.log(bookings);
     return (
-        <div>
+        <div className="">
             <p className='text-3xl my-5 text-center font-bold'>My Orders</p>
             <div className="overflow-x-auto">
                 <table className="table w-full">

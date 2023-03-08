@@ -17,6 +17,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import SignUp from "../Pages/Signup/SignUp";
+import BookingModal from "../Pages/CheckOut/BookingModal/BookingModal";
+import UseUser from "../Hooks/UseUser/UseUser";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -45,7 +47,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/catagoryOptions/:id',
-                element: <CheckOut></CheckOut>,
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/catagoryOptions/${params.id}`)
             },
             {
@@ -61,7 +63,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard/dashboard',
-                element: <MyAppointment></MyAppointment>
+                element: <UseUser><MyAppointment></MyAppointment></UseUser>
             },
             {
                 path: '/dashboard/allusers',
@@ -73,7 +75,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/myproduct',
-                element: <MyProduct></MyProduct>
+                element: <SellerRoute><MyProduct></MyProduct></SellerRoute>
             },
             {
                 path: '/dashboard/addproduct',

@@ -13,18 +13,18 @@ const Contact = () => {
                     <form className='flex flex-col '>
                         <div className="form-control my-4">
                             <label className="input-group">
-                                <input type="text" placeholder="info@site.com" className="input input-bordered w-96" />
+                                <input type="text" placeholder="info@site.com" required className="input input-bordered w-96" />
                             </label>
                         </div>
                         <div className="form-control my-4">
                             <label className="input-group">
-                                <input type="text" placeholder="Subject" className="input input-bordered w-96" />
+                                <input type="text" placeholder="Subject" required className="input input-bordered w-96" />
                             </label>
                         </div>
                         <div className="form-control my-4">
                             <label className="input-group">
 
-                                <input type="text" placeholder="message" className="input input-bordered h-44 w-96" />
+                                <input type="text" placeholder="message" required className="input input-bordered h-44 w-96" />
                             </label>
                         </div>
                         <div className="form-control my-4">

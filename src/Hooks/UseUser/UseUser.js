@@ -2,10 +2,11 @@ import { useEffect, useState } from "react"
 
 const UseUser = email => {
     const [isUser, setIsUser] = useState(false);
+    console.log(isUser)
     const [isUserLoading, setIsUserLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`https://recycle-bin-server-rose.vercel.app/users/user/${email}`)
+            fetch(`http://localhost:5000/users/user/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
