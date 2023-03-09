@@ -5,6 +5,7 @@ import { AuthContext } from "../../Context/Authprovider/Authprovider";
 
 const MyAppointment = () => {
     const { user } = useContext(AuthContext);
+    console.log(user.email);
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -18,7 +19,7 @@ const MyAppointment = () => {
             return data;
         }
     })
-    console.log(bookings);
+  
     return (
         <div className="">
             <p className='text-3xl my-5 text-center font-bold'>My Orders</p>

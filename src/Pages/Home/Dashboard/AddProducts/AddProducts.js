@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../Context/Authprovider/Authprovider";
 import Loading from "../../../../Shared/Loading/Loading";
+
 
 
 const AddProducts = () => {
@@ -19,11 +19,12 @@ const AddProducts = () => {
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/bookingSpeciality')
             const data = await res.json();
+            // console.log(data);
             return data;
         }
     })
     const handleAddProduct = data => {
-        console.log(data)
+        console.log(data);
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -62,6 +63,7 @@ const AddProducts = () => {
                             toast.success(`${data.name} is added successfully`);
                             navigate('/dashboard/myproduct')
                         })
+                        .catch(err => console.log(err));
                 }
             })
     }
@@ -70,7 +72,7 @@ const AddProducts = () => {
     }
     return (
         <div className='w-1/2 lg:mx-auto p-7'>
-            <h2 className="text-4xl text-center">Add A Product</h2>
+            <h2 className="text-5xl text-blue-900 font-bold my-5 text-center">Add A Product</h2>
             <form onSubmit={handleSubmit(handleAddProduct)}>
                 <div className="form-control w-full ">
                     <label className="label"> <span className="label-text">Product Name</span></label>
@@ -102,9 +104,9 @@ const AddProducts = () => {
                 </div>
                 <div className="form-control w-full ">
                     <label className="label"> <span className="label-text">Email</span></label>
-                    <input type="email"  disabled defaultValue={user?.email}  {...register("email", {
+                    <input type="email" readOnly defaultValue={user?.email}  {...register("email", {
                         required: true
-                    })} className="input input-bordered w-full " />
+                    })} className="input input-bordered w-full to-blue-200 " />
                     {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
                 </div>
                 <div className="form-control w-full ">
@@ -137,7 +139,7 @@ const AddProducts = () => {
                     })} className="input input-bordered w-full " />
                     {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
                 </div>
-                <input className='btn bg-gradient-to-r from-red-500 to-red-900 w-full mt-4' value="Add Products" type="submit" />
+                <input className='btn bg-gradient-to-r from-red-500 to-red-900 btn-outline w-full mt-4' value="Add Products" type="submit" />
             </form>
         </div>
     );

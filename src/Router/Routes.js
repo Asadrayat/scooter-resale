@@ -17,8 +17,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import SignUp from "../Pages/Signup/SignUp";
-import BookingModal from "../Pages/CheckOut/BookingModal/BookingModal";
-import UseUser from "../Hooks/UseUser/UseUser";
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -63,7 +62,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard/dashboard',
-                element: <UseUser><MyAppointment></MyAppointment></UseUser>
+                element: <MyAppointment></MyAppointment>
             },
             {
                 path: '/dashboard/allusers',

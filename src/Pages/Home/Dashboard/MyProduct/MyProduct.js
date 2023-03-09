@@ -62,8 +62,8 @@ const MyProduct = () => {
         return <Loading></Loading>
     }
     return (
-        <div className="mx-20">
-            <h2 className="text-3xl text-center mb-4">Manage Product: {Products?.length}</h2>
+        <div className="">
+            <h2 className="text-5xl text-blue-900 font-bold my-10 text-center mb-4">Manage Product: {Products?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead >
