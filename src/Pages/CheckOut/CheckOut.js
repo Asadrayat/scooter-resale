@@ -12,7 +12,7 @@ const CheckOut = () => {
     const { data: scooters = [], refetch } = useQuery({
         queryKey: ['scooters'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/${catagory}`);
+            const res = await fetch(`https://scooter-service.vercel.app/${catagory}`);
             const data = await res.json();
             return data
         }
@@ -20,7 +20,7 @@ const CheckOut = () => {
     return (
         <section className='max-w-[1440px] mx-auto'>
             <div>
-                <p className='my-10 text-5xl text-blue-900 font-bold text'>{name} PreOwned Scooters</p>
+                <p className='my-10 text-2xl lg:text-5xl text-center text-blue-900 font-bold text'>{name} PreOwned Scooters</p>
                 <div className='grid lg:grid-cols-3 my-12  grid-cols-1 align-middle'>
                     {
                         scooters.map(scooter => <Scooter

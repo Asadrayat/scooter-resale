@@ -17,8 +17,9 @@ const AddProducts = () => {
     const { data: specialties, isLoading } = useQuery({
         queryKey: ['specialty'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/bookingSpeciality')
+            const res = await fetch('https://scooter-service.vercel.app/bookingSpeciality')
             const data = await res.json();
+            console.log(data);
             // console.log(data);
             return data;
         }
@@ -39,17 +40,18 @@ const AddProducts = () => {
                 if (imgData.success) {
                     console.log(imgData.data.url);
                     const Product = {
-                        name: data.name,
-                        email: data.email,
+                        title: data.name,
+                        seller: data.email,
                         catagory: data.catagory,
-                        adress: data.adress,
+                        location: data.adress,
                         condition: data.condition,
                         phone: data.phone,
-                        price: data.price,
-                        image: imgData.data.url
+                        original_price: data.Oprice,
+                        resale_price: data.Sprice,
+                        picture: imgData.data.url
                     }
                     // save product information to the database
-                    fetch('http://localhost:5000/products', {
+                    fetch(`https://scooter-service.vercel.app/${data.catagory}`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -60,8 +62,9 @@ const AddProducts = () => {
                         .then(res => res.json())
                         .then(result => {
                             console.log(result);
-                            toast.success(`${data.name} is added successfully`);
-                            navigate('/dashboard/myproduct')
+                            toast.success(`${data.catagory
+                            } is added successfully`);
+                            navigate('/')
                         })
                         .catch(err => console.log(err));
                 }
@@ -72,7 +75,7 @@ const AddProducts = () => {
     }
     return (
         <div className='w-1/2 lg:mx-auto p-7'>
-            <h2 className="text-5xl text-blue-900 font-bold my-5 text-center">Add A Product</h2>
+            <h2 className="text-2xl lg:text-5xl text-blue-900 font-bold my-5 text-center">Add A Product</h2>
             <form onSubmit={handleSubmit(handleAddProduct)}>
                 <div className="form-control w-full ">
                     <label className="label"> <span className="label-text">Product Name</span></label>
@@ -82,8 +85,15 @@ const AddProducts = () => {
                     {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
                 </div>
                 <div className="form-control w-full ">
-                    <label className="label"> <span className="label-text">Price</span></label>
-                    <input type="text" {...register("price", {
+                    <label className="label"> <span className="label-text">Original Price</span></label>
+                    <input type="text" {...register("Oprice", {
+                        required: "Price is Required"
+                    })} className="input input-bordered w-full " />
+                    {errors.price && <p className='text-red-500'>{errors.price.message}</p>}
+                </div>
+                <div className="form-control w-full ">
+                    <label className="label"> <span className="label-text">Selling Price</span></label>
+                    <input type="text" {...register("Sprice", {
                         required: "Price is Required"
                     })} className="input input-bordered w-full " />
                     {errors.price && <p className='text-red-500'>{errors.price.message}</p>}
@@ -116,9 +126,10 @@ const AddProducts = () => {
                         className="select input-bordered w-full ">
                         {
                             specialties.map(specialty => <option
+                                
                                 key={specialty._id}
-                                value={specialty.name}
-                            >{specialty.name}</option>)
+                                value={specialty.catagory}
+                            >{specialty.catagory}</option>)
                         }
 
 
@@ -139,7 +150,7 @@ const AddProducts = () => {
                     })} className="input input-bordered w-full " />
                     {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
                 </div>
-                <input className='btn bg-gradient-to-r from-red-500 to-red-900 btn-outline w-full mt-4' value="Add Products" type="submit" />
+                <input className='btn bg-gradient-to-r from-red-500 to-red-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300  text-xl btn-outline w-full mt-4' value="Add Products" type="submit" />
             </form>
         </div>
     );

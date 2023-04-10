@@ -27,7 +27,7 @@ const BookingModal = ({ scooterOption, setScooterOption, refetch }) => {
             picture
 
         }
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://scooter-service.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -67,7 +67,7 @@ const BookingModal = ({ scooterOption, setScooterOption, refetch }) => {
                             <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                             <input name="pickup" type="text" placeholder="Enter Pickup Point" className="input w-full input-bordered" />
                             <br />
-                            <input className='btn bg-gradient-to-r from-red-500 to-red-900' type="submit" value="Submit" />
+                            <input className='btn bg-gradient-to-r from-red-500 to-red-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300  text-xl' type="submit" value="Submit" />
                         </form>
                     </div>
                 </div>

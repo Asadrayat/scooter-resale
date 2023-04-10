@@ -47,7 +47,7 @@ const router = createBrowserRouter([
             {
                 path: '/catagoryOptions/:id',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/catagoryOptions/${params.id}`)
+                loader: ({ params }) => fetch(`https://scooter-service.vercel.app/catagoryOptions/${params.id}`)
             },
             {
                 path: '/why',

@@ -10,7 +10,7 @@ const ProductCatagory = ({ ctg }) => {
             </figure>
             <div className="card-body">
                 <h2 className="font-bold text-white text-xl">{name}</h2>
-                <Link to={`/catagoryOptions/${_id}`}><button className='btn bg-gradient-to-r from-red-500 to-red-900'>Details</button></Link>
+                <Link to={`/catagoryOptions/${_id}`}><button className='btn bg-gradient-to-r from-red-500 to-red-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300  '>Details</button></Link>
             </div>
         </div>
     );

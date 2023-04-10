@@ -23,10 +23,10 @@ const Home = () => {
             <div>
                 <Achieve></Achieve>
             </div>
-            <div className='max-w-[1440px] mx-auto'>
+            <div className='lg:max-w-[1440px] lg:mx-auto'>
                 <Testimonial></Testimonial>
-                <Contact></Contact>
             </div>
+            <Contact></Contact>
         </div>
     );
 };

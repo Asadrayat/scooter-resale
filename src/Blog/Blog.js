@@ -2,7 +2,7 @@ import React from 'react';
 const Blog = () => {
   return (
     <div className="text-xl    max-w-[1440px] mx-auto p-20">
-      <div className='text-5xl font-bold text-blue-900 mb-10 text-center'>Welcome to our blog page</div>
+      <div className='text-2xl lg:text-5xl font-bold text-blue-900 mb-10 text-center'>Welcome to our blog page</div>
       <h2 className='text-2xl font-bold text-blue-900'>Scooter Resale Market: A Growing Opportunity</h2>
       <p classname='opacity-70'>As urbanization continues to spread, the demand for efficient and affordable modes of transportation has increased. Among these, the humble scooter has emerged as a popular option for those seeking a convenient and cost-effective means of getting around. With the rise of e-scooters in recent years, the scooter resale market has also grown significantly. </p>
 

@@ -12,7 +12,7 @@ const Scooter = ({ scooter, setScooterOption, refetch }) => {
                     {title}
                     <div className="badge badge-secondary">Preowned</div>
                 </h2>
-                <p> {about.length > 100 ?
+                <p> {about?.length > 100 ?
                     `${about.substring(0, 100)}...` : about
                 }</p>
                 <div className="card-actions justify-start">
@@ -27,7 +27,7 @@ const Scooter = ({ scooter, setScooterOption, refetch }) => {
                     <label
                         onClick={() => setScooterOption(scooter)}
                         htmlFor="booking-modal"
-                        className='btn bg-gradient-to-r from-red-500 to-red-900 mt-4 w-full'
+                        className='btn bg-gradient-to-r from-red-500 to-red-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300  text-xl mt-4 w-full'
                     >Book Now</label>
                 </div>
             </div>

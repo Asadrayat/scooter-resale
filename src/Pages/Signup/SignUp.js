@@ -67,7 +67,7 @@ const SignUp = () => {
     }
     const saveUser = (name, email, role) => {
         const user = { name, email, role };
-        fetch('http://localhost:5000/users', {
+        fetch('https://scooter-service.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -84,7 +84,7 @@ const SignUp = () => {
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96 p-7'>
-                <h2 className='text-xl text-center'>Sign Up</h2>
+                <h2 className='text-2xl lg:text-5xl my-12 text-center text-blue-900 font-bold'>Sign Up</h2>
                 <form onSubmit={handleSubmit(handleSignUp)}>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Name</span></label>
@@ -113,12 +113,22 @@ const SignUp = () => {
                         <option value="user">user</option>
                         <option value="seller">seller</option>
                     </select>
-                    <input className='btn btn-warning bg-gradient-to-r from-warning to-error text-white w-full mt-4' value="Sign Up" type="submit" />
+                    <input className='btn bg-gradient-to-r from-red-500 to-red-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300  text-xl text-white w-full mt-4' value="Sign Up" type="submit" />
                     {signUpError && <p className='text-red-600'>{signUpError}</p>}
                 </form>
                 <p className="my-2">Already have an account <Link className='text-error' to="/login">Please Login</Link></p>
                 <div className="divider">OR</div>
-                <button onClick={handleGoogleSignIn} className='btn btn-outline btn-warning w-full'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleSignIn} className="btn bg-gradient-to-r from-red-500 to-red-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300  text-xl  mt-3 border text-center w-full d-flex flex-row-reverse align-items-center justify-content-evenly py-3 px-5 m-auto">
+                    <div className="w-10">
+                        <img
+                            className=" px-2 image-fluid btn-image"
+                            src="https://img.icons8.com/color/344/google-logo.png"
+                            alt=""
+                        />
+                    </div>
+
+                    <p className="fw-bold">Google SignIn</p>
+                </button>
 
             </div>
         </div>

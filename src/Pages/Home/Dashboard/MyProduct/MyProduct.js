@@ -14,7 +14,7 @@ const MyProduct = () => {
     const { data: Products = [],isLoading,refetch } = useQuery({
         queryKey: ['products', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/products?email=${user?.email}`, {
+            const res = await fetch(`https://scooter-service.vercel.app/products?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -29,7 +29,7 @@ const MyProduct = () => {
         queryKey: ['product'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/products?email=${user?.email}`, {
+                const res = await fetch(`https://scooter-service.vercel.app/products?email=${user?.email}`, {
                     headers: {
                         authorization: `beare ${localStorage.getItem('accessToken')}`
                     }
@@ -43,7 +43,7 @@ const MyProduct = () => {
         }
     }); */
     const handleDeleteProduct = product => {
-        fetch(`http://localhost:5000/products/${product._id}`, {
+        fetch(`https://scooter-service.vercel.app/products/${product._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -54,7 +54,7 @@ const MyProduct = () => {
                 console.log(data);
                 if (data.deletedCount > 0) {
                     refetch();
-                    toast.success(`Doctor ${product.name} deleted successfully`)
+                    toast.success(`${product.name} scooter deleted successfully`)
                 }
             })
     }
@@ -63,7 +63,7 @@ const MyProduct = () => {
     }
     return (
         <div className="">
-            <h2 className="text-5xl text-blue-900 font-bold my-10 text-center mb-4">Manage Product: {Products?.length}</h2>
+            <h2 className="text-2xl lg:text-5xl text-blue-900 font-bold my-10 text-center mb-4">Manage Product: {Products?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead >

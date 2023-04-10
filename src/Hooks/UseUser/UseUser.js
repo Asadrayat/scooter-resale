@@ -6,7 +6,7 @@ const UseUser = email => {
     const [isUserLoading, setIsUserLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/user/${email}`)
+            fetch(`https://scooter-service.vercel.app/users/user/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
