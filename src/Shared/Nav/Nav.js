@@ -13,17 +13,17 @@ const Nav = () => {
   };
   const menuItems = (
     <React.Fragment>
-      <li className="text-xl font-bold text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-3xl duration-300 ">
+      <li className="text-xl font-bold text-blue-900 transition  ">
         <Link to="/">Home</Link>
       </li>
-      {/* <li className="text-xl font-bold text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-3xl duration-300"><Link to="/appointment">Appointment</Link></li> */}
-      <li className="text-xl font-bold text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-3xl duration-300">
+      {/* <li className="text-xl font-bold text-blue-900 transition "><Link to="/appointment">Appointment</Link></li> */}
+      <li className="text-xl font-bold text-blue-900 transition ">
         <Link to="/blog">Blog</Link>
       </li>
-      <li className="text-xl font-bold text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-3xl duration-300">
+      <li className="text-xl font-bold text-blue-900 transition ">
         <Link to="/contact">Contact Us</Link>
       </li>
-      <li className="text-xl font-bold text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-3xl duration-300">
+      <li className="text-xl font-bold text-blue-900 transition ">
         <Link
           activeClass="active"
           to="/why"
@@ -37,15 +37,15 @@ const Nav = () => {
       </li>
       {user?.uid ? (
         <>
-          <li className="text-xl font-bold text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-3xl duration-300">
+          <li className="text-xl font-bold text-blue-900 transition ">
             <Link to="/dashboard">Dashboard</Link>
           </li>
-          <li className="text-xl font-bold text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-3xl duration-300">
+          <li className="text-xl font-bold text-blue-900 transition ">
             <button onClick={handleLogOut}>Sign out</button>
           </li>
         </>
       ) : (
-        <li className="text-xl font-bold text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-3xl duration-300">
+        <li className="text-xl font-bold text-blue-900 transition ">
           <Link to="/login">Login</Link>
         </li>
       )}
@@ -84,7 +84,7 @@ const Nav = () => {
         </div>
         <Link
           to="/"
-          className="btn  btn-outline text-blue-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300 ml-5  text-xl"
+          className="btn  btn-outline text-blue-900 ml-5  text-xl"
         >
           Scooter Resale
         </Link>

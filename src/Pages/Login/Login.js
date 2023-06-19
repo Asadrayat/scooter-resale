@@ -73,7 +73,7 @@ const Login = () => {
                         {loginError && <p className='text-red-600 my-5'>{loginError}</p>}
                     </div>
                 </form>
-                <p>New to Doctors Portal <Link className='text-secondary' to="/signup">Create new Account</Link></p>      
+                <p>New to Scooter Resale <Link className='text-secondary' to="/signup">Create new Account</Link></p>      
             </div>
         </div>
     );
