@@ -2,7 +2,7 @@ import React from 'react';
 import bg from '../../../assets/images/contact.jpg';
 const Contact = () => {
     return (
-        <div>
+        <div className='w-11/12 mx-auto lg:w-full'>
             <p className='text-center font-bold text-2xl lg:text-5xl text-blue-900 my-10'>Contact Us</p>
             <section className='lg:py-16 my-5 lg:my-20 ' style={{
                 background: `url(${bg})`,

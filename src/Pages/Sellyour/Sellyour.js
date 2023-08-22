@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Sellyour = () => {
     return (
-        <div className='my-10'>
+        <div className='my-10 w-11/12 mx-auto lg:w-full' >
             <p className='text-2xl lg:text-5xl text-blue-900 font-bold text-center'>Sell Your Scooter Quickly and Easily with Us</p>
             <p className='text-2xl mt-4 text-center opacity-70'>It was really easy to sell your scooter!</p>
             <div className='flex item-center justify-evenly mt-5'>

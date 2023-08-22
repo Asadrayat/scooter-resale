@@ -3,7 +3,7 @@ import { FaQuoteLeft } from 'react-icons/fa';
 
 const Testimonial = () => {
     return (
-        <div>
+        <div className='w-11/12 mx-auto lg:w-full'>
             <p className='text-2xl lg:text-5xl mx-10 font-bold text-blue-900 w-full text-center'><FaQuoteLeft></FaQuoteLeft></p>
             <div className="carousel w-full ">
                 <div id="item1" className="carousel-item w-full">

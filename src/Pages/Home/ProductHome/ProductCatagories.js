@@ -13,7 +13,7 @@ const ProductCatagories = () => {
 
 
     return (
-        <div className='max-w-[1440px] mx-auto'>
+        <div className='w-11/12  lg:max-w-[1440px] mx-auto'>
             <p className='text-2xl lg:text-5xl text-center mt-16 text-blue-900 font-bold'>Caterogries</p>
             <div className='grid mt-8 gap-24  grid-cols-1  md:grid-cols-2 lg:grid-cols-3'>
                 {

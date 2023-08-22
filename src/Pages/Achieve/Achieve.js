@@ -5,7 +5,7 @@ import { BiHappyAlt } from 'react-icons/bi';
 import { IoIosPeople } from 'react-icons/io';
 const Achieve = () => {
     return (
-        <div className="hero lg:h-96 lg:my-16 " style={{ backgroundImage: `url("https://i.ibb.co/614G7Wh/achieve.jpg")` }}>
+        <div className="hero w-11/12 mx-auto lg:w-full lg:h-96 lg:my-16 " style={{ backgroundImage: `url("https://i.ibb.co/614G7Wh/achieve.jpg")` }}>
             <div className="hero-overlay bg-opacity-80 bg-black "></div>
             <div className="hero-content text-center text-neutral-content flex flex-col">
                 <p className='text-2xl lg:text-5xl text-white font-bold'>What Have We Achieved</p>
